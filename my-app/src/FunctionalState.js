@@ -6,7 +6,6 @@ export default function State() {
     function updateData() {
         setData(data + 1);
     }
-
     return (
         <div className='App'>
             <h1>{data}</h1>

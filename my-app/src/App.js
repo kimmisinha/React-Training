@@ -5,7 +5,7 @@ import { User, User_3 } from './User';
 import { Usernew } from './Usernew';
 import State from './FunctionalState';
  import Usernew_2 from './ClassState';
-// import Student from './Student';
+import Student from './Student';
  
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
     <Usernew></Usernew>
     <State></State>
     <Usernew_2></Usernew_2>
-    {/* <Student></Student> */}
+    <Student name="kimmi"/>
     </div>
   );
 }

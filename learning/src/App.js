@@ -6,6 +6,7 @@ import { Usernew } from './Usernew';
 import State from './FunctionalState';
  import Usernew_2 from './ClassState';
 import Student from './Student';
+import Input from './Input';
  
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
     <State></State>
     <Usernew_2></Usernew_2>
     <Student name="kimmi"/>
+    <input></input>
+
     </div>
   );
 }

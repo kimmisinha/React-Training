@@ -8,7 +8,8 @@ import Usernew_2 from './ClassState';
 import Student from './Student';
 import Input from './Input';
 import Toggle from './Toggle';
-import Form from './Form'
+import Form from './Form';
+import Login from'./Login';
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,7 @@ function App() {
       <Student name="kimmi" />
       <Toggle></Toggle>
       <Form></Form>
+      <Login></Login>
     </div>
   );
 }

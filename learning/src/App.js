@@ -13,7 +13,7 @@ import Login from'./Login';
 import Timer from './UseEffect';
 import Style from './Style';
 import Button from 'react-bootstrap/Button';
-
+import List from './List';
 function App() {
   return (
     <div className="App">
@@ -33,7 +33,7 @@ function App() {
        <Style></Style>
        <Button variant="primary">Primary</Button>{' '}
       <Button variant="secondary">Secondary</Button>{' '}
-
+      <List></List>
     </div>
   );
 }

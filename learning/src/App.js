@@ -12,6 +12,8 @@ import Form from './Form';
 import Login from'./Login';
 import Timer from './UseEffect';
 import Style from './Style';
+import Button from 'react-bootstrap/Button';
+
 function App() {
   return (
     <div className="App">
@@ -29,6 +31,9 @@ function App() {
       <Login></Login>
        <Timer></Timer>
        <Style></Style>
+       <Button variant="primary">Primary</Button>{' '}
+      <Button variant="secondary">Secondary</Button>{' '}
+
     </div>
   );
 }

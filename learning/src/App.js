@@ -10,6 +10,7 @@ import Input from './Input';
 import Toggle from './Toggle';
 import Form from './Form';
 import Login from'./Login';
+import Timer from './UseEffect';
 function App() {
   return (
     <div className="App">
@@ -25,6 +26,7 @@ function App() {
       <Toggle></Toggle>
       <Form></Form>
       <Login></Login>
+       <Timer></Timer>
     </div>
   );
 }

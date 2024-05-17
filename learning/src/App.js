@@ -11,6 +11,7 @@ import Toggle from './Toggle';
 import Form from './Form';
 import Login from'./Login';
 import Timer from './UseEffect';
+import Style from './Style';
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
       <Form></Form>
       <Login></Login>
        <Timer></Timer>
+       <Style></Style>
     </div>
   );
 }

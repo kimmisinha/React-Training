@@ -10,7 +10,7 @@ function FunctionComponent() {
   return (
     <div>
       <h1>{count}</h1>
-      <button onClick={increment}>Increment</button>
+      <button onClick={increment}>FunctionComponent Increment</button>
     </div>
   );
 }

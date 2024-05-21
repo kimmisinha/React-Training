@@ -9,7 +9,7 @@ function JsxComponent() {
 
   return (
     <div>
-      <label htmlFor="nameInput">Enter your name: </label>
+      <label htmlFor="nameInput" >Enter your name: </label>
       <input
         type="text"
         id="nameInput"

@@ -16,10 +16,10 @@ class ClassComponent extends Component {
     return (
       <div>
         <h1>{this.state.count}</h1>
-        <button onClick={this.increment}>Increment</button>
+        <button onClick={this.increment}>ClassComponent Increment</button>
       </div>
     );
   }
-}
+} 
 
 export default ClassComponent;

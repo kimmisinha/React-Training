@@ -8,19 +8,17 @@ export default function StateComponent() {
             counter = counter + 1;
             console.log(counter)
         }
-    
         */
 
-    const [set, setvalue] = useState(0)
-    function addvalue() {
+       const [set, setvalue] = useState(0)
+        function addvalue() {
         setvalue(set + 1)
-    }
-    return (
+       }
+      return (
         <>
-            <h1>Chai aur react</h1>
             <h2>Counter value: {set}</h2>
             <button
-                onClick={addvalue} >Add value</button>
+                onClick={addvalue} >UseEffect</button>
             <br></br>
         </>
     )

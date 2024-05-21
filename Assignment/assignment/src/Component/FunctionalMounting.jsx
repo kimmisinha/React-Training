@@ -11,11 +11,10 @@ function FunctionalMounting() {
         };
         fetchData();
     }, []);
-    //componentDidMount
     return (
         <div>
             {data ? (
-                <pre>{JSON.stringify(data,1)}</pre>
+                <pre>{JSON.stringify(data, 1)}</pre>
 
             ) : (<p>Loading.....</p>)}
         </div>

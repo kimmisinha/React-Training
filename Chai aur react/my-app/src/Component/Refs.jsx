@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 function Refs() {
+    const inputref = useRef(null);
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+        inputRef.current.focus(); // Directly focus the input field
+    }, []);
+
     return (
         <>
-        <h2>Refs</h2>
+
+            <input type='text' ref={inputref}></input>
         </>
 
     )

@@ -5,6 +5,7 @@ function Batching() {
 
   function handleclick() {
     setcount(count + 1);
+    console.log(count);
     setext(text + 1);
     // React batches the above two state updates into a single update
 

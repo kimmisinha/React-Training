@@ -1,21 +1,25 @@
 import React from 'react'
-class ClassMounting extends React.Component {
-    constructor({data}) {
-       let [userName, userAge] = data
-        super({data});
+class ClassMounting extends React.PureComponent {
+    constructor({ data }) {
+        let [userName, userAge] = data
+        super({ data });
         this.state = {
             favoritecolor: "red",
-        }; 
+        };
         console.log('Constructor called');
 
     }
 
     static getDerivedStateFromProps(props, state) {
         console.log("getDerivedStateFromProps called");
-        return {props,state}
+        return { props, state }
 
     }
+    componentDidMount() {
+        console.log("componentDidMount called");
+    }
 
+    
     render() {
         let x = "render method is called";
 

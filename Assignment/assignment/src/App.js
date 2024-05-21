@@ -5,7 +5,8 @@ import FunctionalMounting from './Component/FunctionalMounting';
 import Events from './Component/Events';
 import Batching from './Component/Batching';
 import Keys from './Component/Keys';
-import Lists from './Component/Lists'
+import Lists from './Component/Lists';
+import Conditional from './Component/Conditional'
 function App() {
   const userName = 'John Doe';
   const userAge = 30;
@@ -18,6 +19,7 @@ function App() {
       <Batching/>
       <Keys/>
       <Lists/>
+      <Conditional/>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import ClassMounting from './Component/ClassMounting';
-// import FunctionalMounting from './Component/FunctionalMounting';
+// import ClassMounting from './Component/ClassMounting';
+import FunctionalMounting from './Component/FunctionalMounting';
 
 function App() {
   const userName = 'John Doe';
@@ -9,8 +9,8 @@ function App() {
 
   return (
     <div className="App">
-      <ClassMounting data={[userName, userAge]} />
-      {/* <FunctionalMounting /> */}
+      {/* <ClassMounting data={[userName, userAge]} /> */}
+      <FunctionalMounting />
     </div>
   );
 }

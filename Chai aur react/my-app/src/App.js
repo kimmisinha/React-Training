@@ -9,11 +9,9 @@ import Events from './Component/Events';
 import Batching from './Component/Batching';
 import Keys from './Component/Keys';
 import Lists from './Component/Lists';
-import Conditional from './Component/Conditional'
+import Conditional from './Component/'
 function App() {
-  const userName = 'John Doe';
-  const userAge = 30;
-
+  
   return (
     <div className="App">
       <ClassComponent />

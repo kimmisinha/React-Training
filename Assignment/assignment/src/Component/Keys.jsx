@@ -1,8 +1,13 @@
 import React from 'react';
-function Keys(){
+function items() {
+    let items = ['Key1', 'Key2', 'Key3', 'Key4']
+    return (
+        <>
+            {items.map((item, index) => (
+                <li key={index}>{item}</li>
+            ))}
+        </>
 
-   return ( 
-    <h1>Hello</h1>
-  )
+    )
 }
-export default Keys;
+export default items;

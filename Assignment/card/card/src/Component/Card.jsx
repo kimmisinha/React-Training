@@ -1,32 +1,12 @@
-// Card.js
-import React, { useState } from "react";
+import React from "react";
 import "../Component/Card.css";
 
-function Card({ name, age, designation, experiences, achievements, skills }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDetails = () => {
-    setIsOpen(!isOpen);
-  };
-
+function Card({ name, age, designation, onClick }) {
   return (
-    <div className="card" onClick={toggleDetails}>
-      <div>
-
+    <div className="card" onClick={onClick}>
       <h2>{name}</h2>
       <p>Age: {age}</p>
       <p>Designation: {designation}</p>
-      </div>
-      <div>
-      {isOpen && (
-        <div className="details">
-          <p>Experiences: {experiences}</p>
-          <p>Achievements: {achievements}</p>
-          <p>Skills: {skills}</p>
-        </div>
-      )}
-      </div>
-      
     </div>
   );
 }

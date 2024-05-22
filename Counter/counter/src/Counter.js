@@ -4,10 +4,9 @@ function Toggle() {
     const [count, setCount] = useState(0);
 
     const increment = () => setCount(count + 1);
-    console.log()
     const decrement = () => setCount(count - 1);
-    const multiply = () => setCount(count * 2); 
-    const divide = () => setCount(count / 2); 
+    const multiply = () => setCount(count * 2);
+    const divide = () => setCount(count / 2);
 
     return (
         <div className="App">

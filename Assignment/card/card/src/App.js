@@ -1,12 +1,11 @@
-import './App.css';
-import Card from './Component/Card'
+import "./App.css";
+import Card from "./Component/Card";
 
 const person = {
   name: "Johan",
   age: 30,
-  designation: 'Software Engineer'
-
-}
+  designation: "Software Engineer",
+};
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
         age={person.age}
         designation={person.designation}
       />
-
     </div>
   );
 }

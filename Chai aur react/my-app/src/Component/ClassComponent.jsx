@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class ClassComponent extends Component {
   constructor(props) {
@@ -20,6 +20,6 @@ class ClassComponent extends Component {
       </div>
     );
   }
-} 
+}
 
 export default ClassComponent;

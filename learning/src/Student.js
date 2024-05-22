@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const Student = ({name}) => {
+const Student = ({ name }) => {
   return (
     <div>
       <h1>Parent Component</h1>

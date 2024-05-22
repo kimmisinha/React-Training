@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import ClassComponent from './Component/ClassComponent';
 import FunctionComponent from './Component/FunctionComponent';
@@ -9,9 +8,10 @@ import Events from './Component/Events';
 import Batching from './Component/Batching';
 import Keys from './Component/Keys';
 import Lists from './Component/Lists';
-import Conditional from './Component/'
+import Conditional from './Component/Events'
 function App() {
-  
+    const userName="kimmi";
+    const userAge=9;
   return (
     <div className="App">
       <ClassComponent />

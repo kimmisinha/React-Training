@@ -8,7 +8,8 @@ import Events from './Component/Events';
 import Batching from './Component/Batching';
 import Keys from './Component/Keys';
 import Lists from './Component/Lists';
-import Conditional from './Component/Events'
+import Conditional from './Component/Events';
+import ControlledComponent from './Component/ControlledComponent'
 function App() {
     const userName="kimmi";
     const userAge=9;
@@ -25,7 +26,7 @@ function App() {
       <Keys/>
       <Lists/>
       <Conditional/>
-
+      <ControlledComponent/>
     </div>
   );
 }

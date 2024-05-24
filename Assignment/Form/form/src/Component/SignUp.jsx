@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Component/SignUp.css";
-
+import { FaRegEye } from "react-icons/fa";
+import { FaEyeLowVision } from "react-icons/fa6";
 function SignUp() {
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -22,7 +23,7 @@ function SignUp() {
       alert("Passwords do not match!");
     }
     else {
-      setEmailError("");
+      setEmailError("error in email");
       console.log("Username:", username);
       console.log("Email:", email);
       console.log("Password:", password);
@@ -82,7 +83,7 @@ function SignUp() {
                 required
               />
               <span className="eye-icon" onClick={toggleShowPassword}>
-                {showPassword ? "👁️" : "👁️‍🗨️"}
+              {showPassword ? <FaRegEye /> : <FaEyeLowVision />}
               </span>
             </div>
           </div>

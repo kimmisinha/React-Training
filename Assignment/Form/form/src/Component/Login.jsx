@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../Component/Login.css";
+import { FaRegEye } from "react-icons/fa";
+import { FaEyeLowVision } from "react-icons/fa6";
 
 function Login() {
   const validateEmail = (email) => {
@@ -11,13 +13,15 @@ function Login() {
   const [emailError, setEmailError] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const[credentials,setCredentials]=useState({email:"hrllo",password:""})
+  console.log("credentials",credentials)
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateEmail(email)) {
       setEmailError("Please enter a valid email address.");
     } else {
-      setEmailError("");
+      setEmailError("error in email");
       console.log("Email:", email);
       console.log("Password:", password);
     }
@@ -59,11 +63,11 @@ function Login() {
                 name="password"
                 placeholder="Enter your password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setCredentials((pre)=>({...pre,password:e.target.value}))}
                 required
               />
               <span className="eye-icon" onClick={toggleShowPassword}>
-                {showPassword ? "👁️" : "👁️‍🗨️"}
+                {showPassword ? <FaRegEye /> : <FaEyeLowVision />}
               </span>
             </div>
             <hr className="colorful-line" />

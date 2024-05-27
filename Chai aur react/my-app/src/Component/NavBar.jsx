@@ -1,5 +1,5 @@
-// Components/NavBar.js
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import "./NavBar.css";
 
 const NavBar = () => {
   return (
@@ -46,6 +46,12 @@ const NavBar = () => {
         </li>
         <li>
           <Link to="/uncontrolledcomponent">Uncontrolled Component</Link>
+        </li>
+        <li>
+          <Link to="/PureComp">Pure Component</Link>
+        </li>
+        <li>
+          <Link to="/Formikvalidate">Formikvalidate Component</Link>
         </li>
       </ul>
     </nav>

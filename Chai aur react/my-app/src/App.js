@@ -1,6 +1,6 @@
 import "./App.css";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ClassComponent from "./Component/ClassComponent";
 import FunctionComponent from "./Component/FunctionComponent";
 import JsxComponent from "./Component/JsxComponent";
@@ -14,30 +14,41 @@ import Conditional from "./Component/Conditional"; // Corrected import
 import ControlledComponent from "./Component/ControlledComponent";
 import UnControlledComponent from "./Component/UnControlledComponent";
 import NavBar from "./Component/NavBar";
-// import NotFound from './Component/NotFound'
-
+import NotFound from "./Component/NotFound";
+import { PureComp } from "./Component/PureComp";
+import Formikvalidate from "./Component/Formikvalidate";
 function App() {
   const userName = "kimmi";
   const userAge = 9;
   return (
     <div className="App">
       <Router>
-        <NavBar/>
+        <NavBar />
         <Routes>
           <Route path="/" element={<ClassComponent />} />
           <Route path="/FunctionComponent" element={<FunctionComponent />} />
           <Route path="/JsxComponent" element={<JsxComponent />} />
           <Route path="/StateComponent" element={<StateComponent />} />
           <Route path="/Events" element={<Events />} />
-          <Route path="/PropComponent" element={<PropComponent name={userName} age={userAge} />} />
+          <Route
+            path="/PropComponent"
+            element={<PropComponent name={userName} age={userAge} />}
+          />
           <Route path="/Batching" element={<Batching />} />
           <Route path="/Keys" element={<Keys />} />
           <Route path="/Lists" element={<Lists />} />
           <Route path="/Conditional" element={<Conditional />} />
-          <Route path="/ControlledComponent" element={<ControlledComponent />} />
-          <Route path="/UnControlledComponent" element={<UnControlledComponent />} />
-           {/* Catch-all route */}
-          {/* <Route path="*" element={<NotFound />} /> */}
+          <Route
+            path="/ControlledComponent"
+            element={<ControlledComponent />}
+          />
+          <Route
+            path="/UnControlledComponent"
+            element={<UnControlledComponent />}
+          />
+          <Route path="/PureComp" element={<PureComp />} />
+          <Route path="/Formikvalidate" element={<Formikvalidate />} />
+          = <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>

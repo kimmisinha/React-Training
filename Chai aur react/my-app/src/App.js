@@ -1,7 +1,6 @@
 import "./App.css";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import ClassComponent from "./Component/ClassComponent";
 import FunctionComponent from "./Component/FunctionComponent";
 import JsxComponent from "./Component/JsxComponent";
@@ -14,7 +13,8 @@ import Lists from "./Component/Lists";
 import Conditional from "./Component/Conditional"; // Corrected import
 import ControlledComponent from "./Component/ControlledComponent";
 import UnControlledComponent from "./Component/UnControlledComponent";
-// import NavBar from "./Component/NavBar";
+import NavBar from "./Component/NavBar";
+// import NotFound from './Component/NotFound'
 
 function App() {
   const userName = "kimmi";
@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {/* <NavBar/> */}
+        <NavBar/>
         <Routes>
           <Route path="/" element={<ClassComponent />} />
           <Route path="/FunctionComponent" element={<FunctionComponent />} />
@@ -36,9 +36,8 @@ function App() {
           <Route path="/Conditional" element={<Conditional />} />
           <Route path="/ControlledComponent" element={<ControlledComponent />} />
           <Route path="/UnControlledComponent" element={<UnControlledComponent />} />
-          {/* fix route */}
-          <Route path="*" element={<NoMatch />} />
-
+           {/* Catch-all route */}
+          {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </Router>
     </div>

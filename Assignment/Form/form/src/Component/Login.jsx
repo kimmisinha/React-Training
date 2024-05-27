@@ -9,21 +9,20 @@ function Login() {
     return re.test(String(email).toLowerCase());
   };
 
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
-  const [password, setPassword] = useState("");
+  // const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const[credentials,setCredentials]=useState({email:"hrllo",password:""})
-  console.log("credentials",credentials)
+  const [credentials, setCredentials] = useState(["", ""]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!validateEmail(email)) {
+    if (!validateEmail(credentials[0])) {
       setEmailError("Please enter a valid email address.");
     } else {
-      setEmailError("error in email");
-      console.log("Email:", email);
-      console.log("Password:", password);
+      setEmailError("");
+      console.log("Email:", credentials[0]);
+      console.log("Password:", credentials[1]);
     }
   };
 
@@ -47,8 +46,10 @@ function Login() {
               id="email"
               name="email"
               placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={credentials[0]}
+              onChange={(e) =>
+                setCredentials([e.target.value, credentials[1]])
+              }
               required
             />
             {emailError && <p className="error">{emailError}</p>}
@@ -62,8 +63,10 @@ function Login() {
                 id="password"
                 name="password"
                 placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setCredentials((pre)=>({...pre,password:e.target.value}))}
+                value={credentials[1]}
+                onChange={(e) =>
+                  setCredentials([credentials[0], e.target.value])
+                }
                 required
               />
               <span className="eye-icon" onClick={toggleShowPassword}>

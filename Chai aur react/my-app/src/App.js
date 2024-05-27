@@ -15,8 +15,9 @@ import ControlledComponent from "./Component/ControlledComponent";
 import UnControlledComponent from "./Component/UnControlledComponent";
 import NavBar from "./Component/NavBar";
 import NotFound from "./Component/NotFound";
-import { PureComp } from "./Component/PureComp";
+import PureComp  from "./Component/PureComp";
 import Formikvalidate from "./Component/Formikvalidate";
+import Counter from './Component/Counter'
 function App() {
   const userName = "kimmi";
   const userAge = 9;
@@ -48,7 +49,11 @@ function App() {
           />
           <Route path="/PureComp" element={<PureComp />} />
           <Route path="/Formikvalidate" element={<Formikvalidate />} />
-          = <Route path="*" element={<NotFound />} />
+          <Route path="/Counter" element={<Counter />} />
+
+          {/* Counter */}
+           <Route path="*" element={<NotFound />} />
+
         </Routes>
       </Router>
     </div>

@@ -53,6 +53,9 @@ const NavBar = () => {
         <li>
           <Link to="/Formikvalidate">Formikvalidate Component</Link>
         </li>
+        <li>
+          <Link to="/Counter">Counter Component</Link>
+        </li>
       </ul>
     </nav>
   );

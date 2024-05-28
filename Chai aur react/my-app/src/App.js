@@ -30,7 +30,7 @@ function App() {
   const userAge = 9;
   return (
     <div className="App">
-      {/* <Router>
+      { <Router>
         <NavBar />
         <Routes>
           <Route path="/" element={<ClassComponent />} />
@@ -61,7 +61,7 @@ function App() {
            <Route path="*" element={<NotFound />} />
             
         </Routes>
-      </Router> */}
+      </Router> }
       <Counter1 name={counter1} />
       <button onClick={()=>setCounter1(counter1+5)}>Update1</button>
       <Counter2 name={counter2} />

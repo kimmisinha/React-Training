@@ -1,13 +1,13 @@
 
-// import React, { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 
-// const Childref = forwardRef(( ref) => {
-//     return (
+const Childref = forwardRef(( ref) => {
+    return (
          
-//         <>
-//             <input ref={ref} type="text" />
-//         </>
-//     );
-// });
+        <>
+            <input ref={ref} type="text" />
+        </>
+    );
+});
 
-// export default Childref;
+export default Childref;

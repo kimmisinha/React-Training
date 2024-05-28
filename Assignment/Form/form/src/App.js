@@ -13,9 +13,7 @@ function App() {
     <div className="App">
       <Router>
       <NavBar />
-
         <Routes>
-
           <Route path="/"  element={<Login />} />
           <Route path="/signup" element={<SignUp/>} />
           <Route path="/Childref" element={<Childref/>} />

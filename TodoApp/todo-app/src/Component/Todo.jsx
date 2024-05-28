@@ -12,8 +12,8 @@ function App() {
     setMembers((prev) => [...prev, { id: uuidv4(), value: newMember }]);
     setNewMember("");
   }
-  function handleDelete(index) {
-    setMembers(members.filter((member, index2) => index !== index2));
+  function handleDelete(taskId) {
+    setMembers(members.filter((member, index2) => taskId !== member.id));
   }
   /*
    {console.log("members",members)}
@@ -33,13 +33,10 @@ function App() {
         <button onClick={handleAdd}>Add</button>
       </div>
       <div className="todo-list">
-        {members.map((value, index) => (
-          <div key={value.id} className="todo-item">
-            {console.log("members", members)}
-            {console.log("value", value)}
-            {console.log("index", index)}
-            <span>{value.value}</span>
-            <button onClick={() => handleDelete(index)}>Delete</button>
+        {members.map((task, index) => (
+          <div key={task.id} className="todo-item">
+            <span>{task.value}</span>
+            <button onClick={() => handleDelete(task.id)}>Delete</button>
           </div>
         ))}
       </div>

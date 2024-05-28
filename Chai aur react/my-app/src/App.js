@@ -15,15 +15,22 @@ import ControlledComponent from "./Component/ControlledComponent";
 import UnControlledComponent from "./Component/UnControlledComponent";
 import NavBar from "./Component/NavBar";
 import NotFound from "./Component/NotFound";
-import PureComp  from "./Component/PureComp";
+import PureComp from "./Component/PureComp";
 import Formikvalidate from "./Component/Formikvalidate";
-import Counter from './Component/Counter'
+import Counter from "./Component/Counter";
+
+import Counter1 from "./Component/Counter1";
+import Counter2 from "./Component/Counter2";
+import { useState } from "react";
+
 function App() {
+  const [counter1, setCounter1] = useState(0);
+  const [counter2, setCounter2] = useState(0);
   const userName = "kimmi";
   const userAge = 9;
   return (
     <div className="App">
-      <Router>
+      {/* <Router>
         <NavBar />
         <Routes>
           <Route path="/" element={<ClassComponent />} />
@@ -51,11 +58,15 @@ function App() {
           <Route path="/Formikvalidate" element={<Formikvalidate />} />
           <Route path="/Counter" element={<Counter />} />
 
-          {/* Counter */}
            <Route path="*" element={<NotFound />} />
-
+            
         </Routes>
-      </Router>
+      </Router> */}
+      <Counter1 name={counter1} />
+      <button onClick={()=>setCounter1(counter1+5)}>Update1</button>
+      <Counter2 name={counter2} />
+      <button onClick={()=>setCounter2(counter2+10)}>Update2</button>
+
     </div>
   );
 }

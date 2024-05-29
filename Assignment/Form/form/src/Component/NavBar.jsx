@@ -11,12 +11,6 @@ const NavBar = () => {
           <Link to="/signup">signup</Link>
         </li>
         <li>
-          <Link to="/Childref">Childref</Link>
-        </li>
-        <li>
-          <Link to="/Parentref">Parentref Component</Link>
-        </li>
-        <li>
           <Link to="/LoginFormik">LoginFormik Component</Link>
         </li>
         <li>

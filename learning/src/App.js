@@ -1,19 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-import User2 from './User2';
-import { User, User_3 } from './User';
-import { Usernew } from './Usernew';
-import State from './FunctionalState';
-import Usernew_2 from './ClassState';
-import Student from './Student';
-import Input from './Input';
-import Toggle from './Toggle';
-import Form from './Form';
-import Login from'./Login';
-import Timer from './UseEffect';
-import Style from './Style';
+// import logo from './src/logo.svg';
+// import './App.css';
+// import Style from './Style';
+
+import User2 from './Component/User2';
+import { User, User_3 } from './Component/User';
+// import { Usernew } from './Usernew';
+import {Usernew} from './Component/Usernew'
+import State from './Component/FunctionalState';
+import Usernew_2 from './Component/ClassState';
+import Student from './Component/Student';
+import Input from './Component/Input';
+import Toggle from './Component/Toggle';
+import Form from './Component/Form';
+import Login from'./Component/Login';
+import Timer from './Component/UseEffect';
 import Button from 'react-bootstrap/Button';
-import List from './List';
+import List from './Component/List';
 function App() {
   return (
     <div className="App">

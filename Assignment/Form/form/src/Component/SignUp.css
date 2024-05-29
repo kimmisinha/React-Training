@@ -24,7 +24,6 @@ body {
   text-align: center;
   padding-bottom: 6px;
   box-sizing: border-box;
-  /* border: 3px solid blue; */
   display: block;
 }
 
@@ -40,11 +39,6 @@ body {
   width: 50px;
   border-radius: 4px;
 }
-/* .footer{
-    line-height: 1.5;
-    font-size: 13px;
-    line-height: #666;
-  } */
 
 .colorful-line {
   border: 0;
@@ -66,8 +60,8 @@ body {
   background: linear-gradient(90deg, purple, blue, green);
   border: none;
   border-radius: 25px;
-  width: 190px; 
-  height: 30px; 
+  width: 190px;
+  height: 30px;
   color: white;
   font-size: 16px;
   cursor: pointer;

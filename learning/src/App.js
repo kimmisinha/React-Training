@@ -1,10 +1,11 @@
 // import logo from './src/logo.svg';
 // import './App.css';
 // import Style from './Style';
+// import { Usernew } from './Usernew';
+
 
 import User2 from './Component/User2';
 import { User, User_3 } from './Component/User';
-// import { Usernew } from './Usernew';
 import {Usernew} from './Component/Usernew'
 import State from './Component/FunctionalState';
 import Usernew_2 from './Component/ClassState';

@@ -7,14 +7,9 @@ const NavBar = () => {
     <nav>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">ClassComponent</Link>
         </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/products">Products</Link>
-        </li>
+
         <li>
           <Link to="/functioncomponent">Function Component</Link>
         </li>
@@ -49,13 +44,13 @@ const NavBar = () => {
           <Link to="/uncontrolledcomponent">Uncontrolled Component</Link>
         </li>
         <li>
-          <Link to="/PureComp">Pure Component</Link>
+          <Link to="/pure-comp">Pure Component</Link>
         </li>
         <li>
-          <Link to="/Formikvalidate">Formikvalidate Component</Link>
+          <Link to="/formik-validate">Formikvalidate Component</Link>
         </li>
         <li>
-          <Link to="/Counter">Counter Component</Link>
+          <Link to="/counter">Counter Component</Link>
         </li>
         <li>
           <Link to="/games-component">Game Component</Link>

@@ -65,9 +65,9 @@ function App() {
               path="/UnControlledComponent"
               element={<UnControlledComponent />}
             />
-            <Route path="/PureComp" element={<PureComp />} />
-            <Route path="/Formikvalidate" element={<Formikvalidate />} />
-            <Route path="/Counter" element={<Counter />} />
+            <Route path="/pure-comp" element={<PureComp />} />
+            <Route path="/formik-validate" element={<Formikvalidate />} />
+            <Route path="/counter" element={<Counter />} />
 
             <Route path="*" element={<NotFound />} />
             <Route path="/games-component" element={<GamesComponent />} />

@@ -55,6 +55,9 @@ const NavBar = () => {
         <li>
           <Link to="/games-component">Game Component</Link>
         </li>
+        <li>
+          <Link to="/axios">axios Component</Link>
+        </li>
       </ul>
     </nav>
   );

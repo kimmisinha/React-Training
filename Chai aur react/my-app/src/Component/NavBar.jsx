@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+import React from 'react';
 
 const NavBar = () => {
   return (
@@ -18,13 +19,13 @@ const NavBar = () => {
           <Link to="/functioncomponent">Function Component</Link>
         </li>
         <li>
-          <Link to="/jsxcomponent">JSX Component</Link>
+          <Link to="/functioncomponent/jsxcomponent">JSX Component</Link>
         </li>
         <li>
-          <Link to="/statecomponent">State Component</Link>
+          <Link to="/functioncomponent/statecomponent">State Component</Link>
         </li>
         <li>
-          <Link to="/events">Events</Link>
+          <Link to="/functioncomponent/events">Events</Link>
         </li>
         <li>
           <Link to="/propcomponent">Prop Component</Link>
@@ -55,6 +56,9 @@ const NavBar = () => {
         </li>
         <li>
           <Link to="/Counter">Counter Component</Link>
+        </li>
+        <li>
+          <Link to="/games-component">Game Component</Link>
         </li>
       </ul>
     </nav>

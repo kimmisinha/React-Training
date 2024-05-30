@@ -24,10 +24,8 @@ import Counter from "./Component/Counter";
 import Counter1 from "./Component/Counter1";
 import Counter2 from "./Component/Counter2";
 import { useState } from "react";
-
-// import Axios from "./Component/Axios"
-
 import Axios from "./Component/Axios";
+import AxiosPost from "./Component/AxiosPost";
 // const Hockey = HOC(teamAScore, "Hockey Game", "Team A", "Team B");
 // const Football = HOC(teamAScore, "Football Game", "Team C", "Team D");
 
@@ -74,6 +72,7 @@ function App() {
             <Route path="/games-component" element={<GamesComponent />} />
             {/* Axios */}
             <Route path="/axios" element={<Axios />} />
+            <Route path="/axios-post" element={<AxiosPost />} />
 
           </Routes>
         </Router>

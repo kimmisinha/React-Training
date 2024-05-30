@@ -1,6 +1,5 @@
-// import logo from './src/logo.svg';
-// import './App.css';
-// import Style from './Style';
+import "./App.css";
+import Style from './Style';
 // import { Usernew } from './Usernew';
 
 

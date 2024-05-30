@@ -58,6 +58,9 @@ const NavBar = () => {
         <li>
           <Link to="/axios">axios Component</Link>
         </li>
+        <li>
+          <Link to="/axios-post">AxiosPost Component</Link>
+        </li>
       </ul>
     </nav>
   );

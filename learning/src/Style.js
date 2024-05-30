@@ -1,5 +1,4 @@
 import React from "react";
-import "./Style.css";
 const styleItem = { color: "red", backgroundColor: "black" };
 
 const Style = () => {

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './AddUser.css'; // Import CSS file
+import React, { useState } from "react";
+import axios from "axios";
+import "./AddUser.css";
+import axiosInstance from "../Component/Axiosinstance";
 
 function AddUser() {
-  const [inputData, setInputData] = useState({ firstName: '', lastName: '' });
+  const [inputData, setInputData] = useState({ firstName: "", lastName: "" });
 
   const handleChangeinputA = (event) => {
     setInputData((prev) => ({ ...prev, firstName: event.target.value }));
@@ -15,6 +16,7 @@ function AddUser() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    /*
     axios
       .post('https://jsonplaceholder.typicode.com/users', inputData)
       .then((response) => {
@@ -22,6 +24,15 @@ function AddUser() {
       })
       .catch((error) => {
         console.error('Error:', error);
+      });
+      */
+    axiosInstance
+      .post("/users", inputData)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
       });
   };
 

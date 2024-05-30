@@ -89,8 +89,8 @@ const LoginFormik = () => {
           </button>
         </form>
         <div className="footer">
-          <p>
-            Don't have an account? 
+        <p>
+            Don't have an account? <a href="#">Sign up</a>
           </p>
         </div>
       </div>

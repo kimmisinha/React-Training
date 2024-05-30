@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Component/SignUp.css";
+// import "../Component/SignUp.css";
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeLowVision } from "react-icons/fa6";
 function SignUp() {

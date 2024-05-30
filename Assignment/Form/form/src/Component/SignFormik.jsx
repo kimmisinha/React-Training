@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Component/SignUp.css";
+// import "../Component/SignUp.css";
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeLowVision } from "react-icons/fa6";
 import { useFormik } from "formik";
@@ -44,7 +44,6 @@ function SignFormik() {
     },
   });
 
-  
   return (
     <div className="main-container">
       <div className="welcome-container">
@@ -123,7 +122,9 @@ function SignFormik() {
           </button>
         </form>
         <div className="footer">
-          <p>Already have an account?</p>
+          <p>
+            Don't have an account? <a href="#">Sign up</a>
+          </p>{" "}
         </div>
       </div>
     </div>

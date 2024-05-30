@@ -12,10 +12,10 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/LoginFormik" element={<LoginFormik />} />
-          <Route path="/SignFormik" element={<SignFormik />} />
+          <Route path="/login-formik" element={<LoginFormik />} />
+          <Route path="/sign-formik" element={<SignFormik />} />
         </Routes>
       </Router>
     </div>

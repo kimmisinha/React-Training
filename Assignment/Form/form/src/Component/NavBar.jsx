@@ -5,20 +5,19 @@ const NavBar = () => {
     <nav>
       <ul>
         <li>
-          <Link to="/Login">Login</Link>
+          <Link to="/login">Login</Link>
         </li>
         <li>
           <Link to="/signup">signup</Link>
         </li>
         <li>
-          <Link to="/LoginFormik">LoginFormik Component</Link>
+          <Link to="/login-formik">LoginFormik Component</Link>
         </li>
         <li>
-          <Link to="/SignFormik">SignFormik Component</Link>
+          <Link to="/sign-formik">SignFormik Component</Link>
         </li>
       </ul>
     </nav>
   );
 };
-
 export default NavBar;

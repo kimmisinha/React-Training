@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import HOC from "./HOC/HOC";
-import teamAScore from './HOC/Counters/TeamScore';
+import teamAScore from "./HOC/Counters/TeamScore";
 
 const Hockey = HOC(teamAScore, "Hockey Game", "Team A", "Team B");
 const Football = HOC(teamAScore, "Football Game", "Team C", "Team D");

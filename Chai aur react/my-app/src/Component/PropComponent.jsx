@@ -1,8 +1,6 @@
 import React from "react";
 
 function PropComponent({ name, age }) {
-  // console.log("name",name);
-  // console.log("age",age)
   return (
     <div>
       <h2>Name: {name}</h2>

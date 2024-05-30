@@ -29,7 +29,7 @@ function Users() {
           <button
             className="close-btn"
             onClick={() => removeUser(user.id)}
-          ></button>
+          >x</button>
         </div>
       ))}
     </div>

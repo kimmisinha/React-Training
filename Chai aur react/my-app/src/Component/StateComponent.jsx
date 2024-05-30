@@ -8,7 +8,7 @@ export default function StateComponent() {
             counter = counter + 1;
             console.log(counter)
         }
-        */
+  */
 
   const [set, setvalue] = useState(0);
   function addvalue() {

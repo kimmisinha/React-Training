@@ -3,6 +3,7 @@ import axios from "axios";
 import "./AddUser.css";
 import axiosInstance from "../Component/Axiosinstance";
 
+
 function AddUser() {
   const [inputData, setInputData] = useState({ firstName: "", lastName: "" });
 

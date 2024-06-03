@@ -1,20 +1,25 @@
 nav ul {
   list-style-type: none;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 10px;
 }
 
 nav ul li {
-  display: inline;
-  margin-right: 20px;
+  margin: 10px 0;
 }
 
 nav ul li a {
   text-decoration: none;
   color: black;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
-  color: red;
-  background-color: burlywood;
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  border-radius: 5px;
 }

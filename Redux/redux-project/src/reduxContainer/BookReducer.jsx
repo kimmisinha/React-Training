@@ -1,6 +1,8 @@
-import { buy_book } from "./BookType";
+import { buy_book, add_book, PERCENTAGE_BOOK } from "./BookType";
 const intialstate = {
   Numberofbook: 20,
+  Totalnobook: 0,
+  profitPercentage: 0,
 };
 
 const BookReducer = (state = intialstate, action) => {
@@ -10,9 +12,19 @@ const BookReducer = (state = intialstate, action) => {
         ...state,
         Numberofbook: state.Numberofbook - 1,
       };
+    case add_book:
+      return {
+        ...state,
+        Totalnobook: state.Totalnobook + 1,
+      };
+    case PERCENTAGE_BOOK:
+      return {
+        ...state,
+        profitPercentage: action.payload,
+      };
     default:
       return state;
   }
 };
-console.log(BookReducer);
+// console.log(BookReducer);
 export default BookReducer;

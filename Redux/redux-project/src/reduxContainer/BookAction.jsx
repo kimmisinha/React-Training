@@ -1,4 +1,4 @@
-import { buy_book, add_book, PERCENTAGE_BOOK } from "./BookType";
+import { buy_book, add_book, percentage_book, user_details } from "./BookType";
 
 export const purchase_book = () => {
   return {
@@ -15,7 +15,14 @@ export const buying_book = () => {
 //Using payload
 export const percentageBook = (percentage) => {
   return {
-    type: PERCENTAGE_BOOK,
+    type: percentage_book,
     payload: percentage,
+  };
+};
+
+export const userdetails = (user) => {
+  return {
+    type: user_details,
+    payload: user,
   };
 };

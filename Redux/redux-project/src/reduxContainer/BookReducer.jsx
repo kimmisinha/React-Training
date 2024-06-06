@@ -1,13 +1,24 @@
-import { buy_book, add_book, PERCENTAGE_BOOK } from "./BookType";
+import { userdetails } from "./BookAction";
+import { sell_book, add_book, percentage_book, user_details } from "./BookType";
 const intialstate = {
   Numberofbook: 20,
   Totalnobook: 0,
   profitPercentage: 0,
+  userDetails: {
+    name: "",
+    age: 0,
+    address: {
+      street: "",
+      city: "",
+      state: "",
+      zip: "",
+    },
+  },
 };
-
 const BookReducer = (state = intialstate, action) => {
   switch (action.type) {
-    case buy_book:
+    case sell_book:
+      console.log('Inside reducer');
       return {
         ...state,
         Numberofbook: state.Numberofbook - 1,
@@ -17,14 +28,20 @@ const BookReducer = (state = intialstate, action) => {
         ...state,
         Totalnobook: state.Totalnobook + 1,
       };
-    case PERCENTAGE_BOOK:
+    case percentage_book:
       return {
         ...state,
         profitPercentage: action.payload,
       };
+    case user_details:
+
+      return {
+        ...state,
+        userDetails: action.payload
+      };
+
     default:
       return state;
   }
 };
-// console.log(BookReducer);
 export default BookReducer;

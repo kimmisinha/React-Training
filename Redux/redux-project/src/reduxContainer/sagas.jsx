@@ -1,17 +1,20 @@
-import { takeEvery, put, delay, all } from "redux-saga/effects";
-import { buy_book } from "./BookType";
+import { all, put, call, takeLatest } from "redux-saga/effects";
+import { sell_book } from "./BookType";
 
-function* purchaseBookSaga() {
-  yield delay(5000);
-  yield put({ type: buy_book });
+const delay = (ms) => new Promise(res => setTimeout(res, ms));
+
+export function* purchaseBookSaga() {
+  yield delay(2000);
+  console.log('Inside saga');
+  yield put({ type: sell_book });
 }
 
-function* watchPurchaseBookSaga() {
-  yield takeEvery("purchase_book", purchaseBookSaga);
+export function* watchPurchaseBookSaga() {
+  yield takeLatest('buy_book', purchaseBookSaga);
 }
 
 export default function* rootSaga() {
-{    console.log("kimmi")
-}
-  yield all([watchPurchaseBookSaga()]);
+  yield all([
+    watchPurchaseBookSaga(),
+  ]);
 }

@@ -1,14 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import {Provider} from 'react-redux' //connecting react with redux
-import store from './reduxContainer/Store';
-import  BookContainer from './reduxContainer/BookContainer'
+import logo from "./logo.svg";
+import "./App.css";
+import { Provider } from "react-redux"; //connecting react with redux
+import store from "./reduxContainer/Store";
+import BookContainer from "./reduxContainer/BookContainer";
 function App() {
   return (
     <Provider store={store}>
-    <div className="App">
-    <BookContainer />
-    </div>
+      <div className="App">
+        <BookContainer />
+      </div>
     </Provider>
   );
 }

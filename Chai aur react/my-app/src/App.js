@@ -2,6 +2,9 @@ import "./App.css";
 import ReactDOM from "react-dom/client";
 // import HOC from "./Component/HOC/HOC";
 // import teamAScore from './Component/HOC/Counters/TeamScore'
+// const Hockey = HOC(teamAScore, "Hockey Game", "Team A", "Team B");
+// const Football = HOC(teamAScore, "Football Game", "Team C", "Team D");
+
 import GamesComponent from "./Component/GamesComponent";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ClassComponent from "./Component/ClassComponent";
@@ -26,12 +29,11 @@ import Counter2 from "./Component/Counter2";
 import { useState } from "react";
 import Axios from "./Component/Axios";
 import AxiosPost from "./Component/AxiosPost";
-// const Hockey = HOC(teamAScore, "Hockey Game", "Team A", "Team B");
-// const Football = HOC(teamAScore, "Football Game", "Team C", "Team D");
-
+import ChildA from "./Component/ChildA";
 import Proptypes from "./Component/Proptypes";
-import Elementcomponent from "./Component/Elementcomponent"; 
-
+import Elementcomponent from "./Component/Elementcomponent";
+import { createContext } from "react";
+const nestedprops = "kimmi";
 function App() {
   const [counter1, setCounter1] = useState(0);
   const [counter2, setCounter2] = useState(0);
@@ -94,6 +96,8 @@ function App() {
                 />
               }
             />
+            
+          <Route path="/child-a" element={<ChildA name={nestedprops} />} />
           </Routes>
         </Router>
       }

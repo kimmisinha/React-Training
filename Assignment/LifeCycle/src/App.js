@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import ClassMounting from './Component/ClassMounting';
 import FunctionalMounting from './Component/FunctionalMounting';
+import ChildA from '../../../Chai aur react/my-app/src/Component/ChildA';
 
 function App() {
   const userName = 'John Doe';
@@ -12,7 +13,6 @@ function App() {
       <ClassMounting data={[userName, userAge]} />
       <FunctionalMounting name={value} />
       <button onClick={() => setValue(p => p + 1)}>Add</button>
-
     </div>
   );
 }

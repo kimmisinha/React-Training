@@ -67,6 +67,9 @@ const NavBar = () => {
         <li>
           <Link to="/element-component">element-component</Link>
         </li>
+        <li>
+          <Link to="/child-a">Props-component</Link>
+        </li>
       </ul>
     </nav>
   );

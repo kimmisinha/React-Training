@@ -33,7 +33,10 @@ import ChildA from "./Component/ChildA";
 import Proptypes from "./Component/Proptypes";
 import Elementcomponent from "./Component/Elementcomponent";
 import { createContext } from "react";
-const nestedprops = "kimmi";
+// const nestedprops = "kimmi";
+
+const DataContext = createContext();   /*create context*/
+
 function App() {
   const [counter1, setCounter1] = useState(0);
   const [counter2, setCounter2] = useState(0);
@@ -41,9 +44,15 @@ function App() {
   const userName = "kimmi";
   const userAge = 9;
   const userEmail = "kimmi@example.com";
+  const name="kimmi";
+const rollno="9"
+const contextValue = { name, rollno };
 
   return (
+    <DataContext.Provider value={contextValue}>
+
     <div className="App">
+      
       {
         <Router>
           <NavBar />
@@ -96,8 +105,10 @@ function App() {
                 />
               }
             />
-            
-          <Route path="/child-a" element={<ChildA name={nestedprops} />} />
+
+            {/* <Route path="/child-a" element={<ChildA name={nestedprops} />} /> */}
+            <Route path="/child-a" element={<ChildA />} />
+
           </Routes>
         </Router>
       }
@@ -113,7 +124,10 @@ function App() {
       <Counter2 name={counter2} />
       <button onClick={()=>setCounter2(counter2+10)}>Update2</button> */}
     </div>
+    </DataContext.Provider>
+
   );
 }
 
 export default App;
+export { DataContext };

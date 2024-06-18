@@ -29,11 +29,17 @@ import AxiosPost from "./Component/AxiosPost";
 // const Hockey = HOC(teamAScore, "Hockey Game", "Team A", "Team B");
 // const Football = HOC(teamAScore, "Football Game", "Team C", "Team D");
 
+import Proptypes from "./Component/Proptypes";
+import Elementcomponent from "./Component/Elementcomponent"; 
+
 function App() {
   const [counter1, setCounter1] = useState(0);
   const [counter2, setCounter2] = useState(0);
+
   const userName = "kimmi";
   const userAge = 9;
+  const userEmail = "kimmi@example.com";
+
   return (
     <div className="App">
       {
@@ -74,6 +80,20 @@ function App() {
             <Route path="/axios" element={<Axios />} />
             <Route path="/axios-post" element={<AxiosPost />} />
 
+            <Route
+              path="/proptypes"
+              element={
+                <Proptypes name={userName} age={userAge} email={userEmail} />
+              }
+            />
+            <Route
+              path="/element-component"
+              element={
+                <Elementcomponent
+                  elementProp={<p>This is a paragraph passed as a prop!</p>}
+                />
+              }
+            />
           </Routes>
         </Router>
       }

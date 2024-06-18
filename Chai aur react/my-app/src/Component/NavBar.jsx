@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import React from 'react';
+import React from "react";
 
 const NavBar = () => {
   return (
@@ -60,6 +60,12 @@ const NavBar = () => {
         </li>
         <li>
           <Link to="/axios-post">AxiosPost Component</Link>
+        </li>
+        <li>
+          <Link to="/proptypes">proptypes Component</Link>
+        </li>
+        <li>
+          <Link to="/element-component">element-component</Link>
         </li>
       </ul>
     </nav>

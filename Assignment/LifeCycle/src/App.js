@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import ClassMounting from './Component/ClassMounting';
-import FunctionalMounting from './Component/FunctionalMounting';
-import ChildA from '../../../Chai aur react/my-app/src/Component/ChildA';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ClassMounting from './Component/ClassLifeCycle';
+import FunctionalMounting from './Component/FunctionalLifeCycle';
+import PureComponent from './Component/PureComponent';
+import Refs from './Component/Refs';
+import Conditional from './Component/Conditional'; 
 
 function App() {
-  const userName = 'John Doe';
-  const userAge = 30;
-  const [value, setValue] = useState(0);
   return (
-    <div className="App">
-      <ClassMounting data={[userName, userAge]} />
-      <FunctionalMounting name={value} />
-      <button onClick={() => setValue(p => p + 1)}>Add</button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<ClassMounting />} />
+        <Route path="/conditional" element={<Conditional />} /> 
+        <Route path="/functional-mounting" element={<FunctionalMounting />} />
+        <Route path="/pure-component" element={<PureComponent />} />
+        <Route path="/refs" element={<Refs />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

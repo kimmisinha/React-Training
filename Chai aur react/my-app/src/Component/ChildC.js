@@ -11,7 +11,6 @@
 
 // export default ChildC;
 
-
 import React from 'react';
 import { DataContext } from '../App';
 
@@ -19,9 +18,12 @@ function ChildC() {
   return (
     <div>
       <DataContext.Consumer>
-        {(name) => {
-          return <h1>My name is {name}</h1>;
-        }}
+        {({ name, rollno }) => (
+          <>
+            <h1>My name is {name}</h1>
+            <h2>My roll number is {rollno}</h2>
+          </>
+        )}
       </DataContext.Consumer>
     </div>
   );

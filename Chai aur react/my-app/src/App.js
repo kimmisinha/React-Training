@@ -35,7 +35,7 @@ import Elementcomponent from "./Component/Elementcomponent";
 import { createContext } from "react";
 // const nestedprops = "kimmi";
 
-const DataContext = createContext();   /*create context*/
+const DataContext = createContext(); /*create context*/
 
 function App() {
   const [counter1, setCounter1] = useState(0);
@@ -44,88 +44,84 @@ function App() {
   const userName = "kimmi";
   const userAge = 9;
   const userEmail = "kimmi@example.com";
-  const name="kimmi";
-const rollno="9"
-const contextValue = { name, rollno };
+  const name = "kimmi";
+  const rollno = "9";
+  const contextValue = { name, rollno };
 
   return (
     <DataContext.Provider value={contextValue}>
+      <div className="App">
+        {
+          <Router>
+            <NavBar />
+            <Routes>
+              <Route path="/" element={<ClassComponent />} />
 
-    <div className="App">
-      
-      {
-        <Router>
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<ClassComponent />} />
+              <Route path="/FunctionComponent" element={<FunctionComponent />}>
+                <Route path="JsxComponent" element={<JsxComponent />} />
+                <Route path="StateComponent" element={<StateComponent />} />
+                <Route path="Events" element={<Events />} />
+              </Route>
 
-            <Route path="/FunctionComponent" element={<FunctionComponent />}>
-              <Route path="JsxComponent" element={<JsxComponent />} />
-              <Route path="StateComponent" element={<StateComponent />} />
-              <Route path="Events" element={<Events />} />
-            </Route>
+              <Route
+                path="/PropComponent"
+                element={<PropComponent name={userName} age={userAge} />}
+              />
+              <Route path="/Batching" element={<Batching />} />
+              <Route path="/Keys" element={<Keys />} />
+              <Route path="/Lists" element={<Lists />} />
+              <Route path="/Conditional" element={<Conditional />} />
+              <Route
+                path="/ControlledComponent"
+                element={<ControlledComponent />}
+              />
+              <Route
+                path="/UnControlledComponent"
+                element={<UnControlledComponent />}
+              />
+              <Route path="/pure-comp" element={<PureComp />} />
+              <Route path="/formik-validate" element={<Formikvalidate />} />
+              <Route path="/counter" element={<Counter />} />
 
-            <Route
-              path="/PropComponent"
-              element={<PropComponent name={userName} age={userAge} />}
-            />
-            <Route path="/Batching" element={<Batching />} />
-            <Route path="/Keys" element={<Keys />} />
-            <Route path="/Lists" element={<Lists />} />
-            <Route path="/Conditional" element={<Conditional />} />
-            <Route
-              path="/ControlledComponent"
-              element={<ControlledComponent />}
-            />
-            <Route
-              path="/UnControlledComponent"
-              element={<UnControlledComponent />}
-            />
-            <Route path="/pure-comp" element={<PureComp />} />
-            <Route path="/formik-validate" element={<Formikvalidate />} />
-            <Route path="/counter" element={<Counter />} />
+              <Route path="*" element={<NotFound />} />
+              <Route path="/games-component" element={<GamesComponent />} />
+              {/* Axios */}
+              <Route path="/axios" element={<Axios />} />
+              <Route path="/axios-post" element={<AxiosPost />} />
 
-            <Route path="*" element={<NotFound />} />
-            <Route path="/games-component" element={<GamesComponent />} />
-            {/* Axios */}
-            <Route path="/axios" element={<Axios />} />
-            <Route path="/axios-post" element={<AxiosPost />} />
+              <Route
+                path="/proptypes"
+                element={
+                  <Proptypes name={userName} age={userAge} email={userEmail} />
+                }
+              />
+              <Route
+                path="/element-component"
+                element={
+                  <Elementcomponent
+                    elementProp={<p>This is a paragraph passed as a prop!</p>}
+                  />
+                }
+              />
 
-            <Route
-              path="/proptypes"
-              element={
-                <Proptypes name={userName} age={userAge} email={userEmail} />
-              }
-            />
-            <Route
-              path="/element-component"
-              element={
-                <Elementcomponent
-                  elementProp={<p>This is a paragraph passed as a prop!</p>}
-                />
-              }
-            />
+              {/* <Route path="/child-a" element={<ChildA name={nestedprops} />} /> */}
+              <Route path="/child-a" element={<ChildA />} />
+            </Routes>
+          </Router>
+        }
 
-            {/* <Route path="/child-a" element={<ChildA name={nestedprops} />} /> */}
-            <Route path="/child-a" element={<ChildA />} />
-
-          </Routes>
-        </Router>
-      }
-
-      {/* <div>
+        {/* <div>
         <h2>Games</h2>
         <Hockey teamAScore={0} teamBScore={0} />
         <Football teamAScore={0} teamBScore={0} />
       </div> */}
 
-      {/* <Counter1 name={counter1} />
+        {/* <Counter1 name={counter1} />
       <button onClick={()=>setCounter1(counter1+5)}>Update1</button>
       <Counter2 name={counter2} />
       <button onClick={()=>setCounter2(counter2+10)}>Update2</button> */}
-    </div>
+      </div>
     </DataContext.Provider>
-
   );
 }
 

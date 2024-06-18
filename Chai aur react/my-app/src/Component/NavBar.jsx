@@ -70,6 +70,9 @@ const NavBar = () => {
         <li>
           <Link to="/child-a">Props-component</Link>
         </li>
+        <li>
+          <Link to="/use-reducer">use-Reducer-component</Link>
+        </li>
       </ul>
     </nav>
   );

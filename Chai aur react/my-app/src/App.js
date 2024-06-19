@@ -1,10 +1,6 @@
 import "./App.css";
 import ReactDOM from "react-dom/client";
-// import HOC from "./Component/HOC/HOC";
-// import teamAScore from './Component/HOC/Counters/TeamScore'
-// const Hockey = HOC(teamAScore, "Hockey Game", "Team A", "Team B");
-// const Football = HOC(teamAScore, "Football Game", "Team C", "Team D");
-
+import React, { Suspense, lazy } from "react";
 import GamesComponent from "./Component/GamesComponent";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ClassComponent from "./Component/ClassComponent";
@@ -34,7 +30,8 @@ import Proptypes from "./Component/Proptypes";
 import Elementcomponent from "./Component/Elementcomponent";
 import { createContext } from "react";
 import Reducerexample from "./Component/Reducerexample";
-// const nestedprops = "kimmi";
+import ErrorBoundary from "./Component/ErrorBoundary";
+const LazyLoading = lazy(() => import("./Component/LazyLoading"));
 
 const DataContext = createContext(); /*create context*/
 
@@ -52,79 +49,81 @@ function App() {
   return (
     <DataContext.Provider value={contextValue}>
       <div className="App">
-        {
-          <Router>
-            <NavBar />
-            <Routes>
-              <Route path="/" element={<ClassComponent />} />
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<ClassComponent />} />
 
-              <Route path="/FunctionComponent" element={<FunctionComponent />}>
-                <Route path="JsxComponent" element={<JsxComponent />} />
-                <Route path="StateComponent" element={<StateComponent />} />
-                <Route path="Events" element={<Events />} />
-              </Route>
+            <Route path="/FunctionComponent" element={<FunctionComponent />}>
+              <Route path="JsxComponent" element={<JsxComponent />} />
+              <Route path="StateComponent" element={<StateComponent />} />
+              <Route path="Events" element={<Events />} />
+            </Route>
 
-              <Route
-                path="/PropComponent"
-                element={<PropComponent name={userName} age={userAge} />}
-              />
-              <Route path="/Batching" element={<Batching />} />
-              <Route path="/Keys" element={<Keys />} />
-              <Route path="/Lists" element={<Lists />} />
-              <Route path="/Conditional" element={<Conditional />} />
-              <Route
-                path="/ControlledComponent"
-                element={<ControlledComponent />}
-              />
-              <Route
-                path="/UnControlledComponent"
-                element={<UnControlledComponent />}
-              />
-              <Route path="/pure-comp" element={<PureComp />} />
-              <Route path="/formik-validate" element={<Formikvalidate />} />
-              <Route path="/counter" element={<Counter />} />
+            <Route
+              path="/PropComponent"
+              element={<PropComponent name={userName} age={userAge} />}
+            />
+            <Route path="/Batching" element={<Batching />} />
+            <Route path="/Keys" element={<Keys />} />
+            <Route path="/Lists" element={<Lists />} />
+            <Route path="/Conditional" element={<Conditional />} />
+            <Route
+              path="/ControlledComponent"
+              element={<ControlledComponent />}
+            />
+            <Route
+              path="/UnControlledComponent"
+              element={<UnControlledComponent />}
+            />
+            <Route path="/pure-comp" element={<PureComp />} />
+            <Route path="/formik-validate" element={<Formikvalidate />} />
+            <Route path="/counter" element={<Counter />} />
 
-              <Route path="*" element={<NotFound />} />
-              <Route path="/games-component" element={<GamesComponent />} />
-              {/* Axios */}
-              <Route path="/axios" element={<Axios />} />
-              <Route path="/axios-post" element={<AxiosPost />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/games-component" element={<GamesComponent />} />
+            {/* Axios */}
+            <Route path="/axios" element={<Axios />} />
+            <Route path="/axios-post" element={<AxiosPost />} />
 
-              <Route
-                path="/proptypes"
-                element={
-                  <Proptypes name={userName} age={userAge} email={userEmail} />
-                }
-              />
-              <Route
-                path="/element-component"
-                element={
-                  <Elementcomponent
-                    elementProp={<p>This is a paragraph passed as a prop!</p>}
-                  />
-                }
-              />
+            <Route
+              path="/proptypes"
+              element={
+                <Proptypes name={userName} age={userAge} email={userEmail} />
+              }
+            />
+            <Route
+              path="/element-component"
+              element={
+                <Elementcomponent
+                  elementProp={<p>This is a paragraph passed as a prop!</p>}
+                />
+              }
+            />
 
-              {/* <Route path="/child-a" element={<ChildA name={nestedprops} />} /> */}
-              <Route path="/child-a" element={<ChildA />} />
-              
-              <Route path="/use-reducer" element={<Reducerexample />} />
+            {/* <Route path="/child-a" element={<ChildA name={nestedprops} />} /> */}
+            <Route path="/child-a" element={<ChildA />} />
 
+            <Route path="/use-reducer" element={<Reducerexample />} />
 
-            </Routes>
-          </Router>
-        }
+            <Route
+              path="/lazy-loading"
+              element={
+                <ErrorBoundary>
+                  <Suspense fallback={<div>Loading...</div>}>
+                    {<LazyLoading />}
+                  </Suspense>
+                </ErrorBoundary>
+              }
+            />
+          </Routes>
+        </Router>
 
-        {/* <div>
-        <h2>Games</h2>
-        <Hockey teamAScore={0} teamBScore={0} />
-        <Football teamAScore={0} teamBScore={0} />
-      </div> */}
-
+        {/* Example of usage outside the Router */}
         {/* <Counter1 name={counter1} />
-      <button onClick={()=>setCounter1(counter1+5)}>Update1</button>
-      <Counter2 name={counter2} />
-      <button onClick={()=>setCounter2(counter2+10)}>Update2</button> */}
+        <button onClick={() => setCounter1(counter1 + 5)}>Update1</button>
+        <Counter2 name={counter2} />
+        <button onClick={() => setCounter2(counter2 + 10)}>Update2</button> */}
       </div>
     </DataContext.Provider>
   );

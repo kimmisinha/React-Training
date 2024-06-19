@@ -73,6 +73,9 @@ const NavBar = () => {
         <li>
           <Link to="/use-reducer">use-Reducer-component</Link>
         </li>
+        <li>
+          <Link to="/lazy-loading">lazy-loading-component</Link>
+        </li>
       </ul>
     </nav>
   );

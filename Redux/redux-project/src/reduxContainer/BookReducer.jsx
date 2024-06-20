@@ -1,6 +1,6 @@
 import { userdetails } from "./BookAction";
 import { sell_book, add_book, percentage_book, user_details } from "./BookType";
-const intialstate = {
+const abc = {
   Numberofbook: 20,
   Totalnobook: 0,
   profitPercentage: 0,
@@ -15,7 +15,7 @@ const intialstate = {
     },
   },
 };
-const BookReducer = (state = intialstate, action) => {
+const BookReducer = (state = abc, action) => {
   switch (action.type) {
     case sell_book:
       console.log('Inside reducer');

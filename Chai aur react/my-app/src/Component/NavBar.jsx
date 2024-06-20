@@ -76,6 +76,10 @@ const NavBar = () => {
         <li>
           <Link to="/lazy-loading">lazy-loading-component</Link>
         </li>
+        <li>
+          <Link to="/functiona-componentWillUnmount">functiona-componentWillUnmount-component</Link>
+        </li>
+        {/* functiona-componentWillUnmount */}
       </ul>
     </nav>
   );

@@ -31,7 +31,7 @@ import Elementcomponent from "./Component/Elementcomponent";
 import { createContext } from "react";
 import Reducerexample from "./Component/Reducerexample";
 import ErrorBoundary from "./Component/ErrorBoundary";
-// import FunctionacomponentWillUnmount from "./Component/FunctionacomponentWillUnmount"
+import FunctionacomponentWillUnmount from "./Component/FunctionacomponentWillUnmount"
 const LazyLoading = lazy(() => import("./Component/LazyLoading"));
 
 const DataContext = createContext(); /*create context*/
@@ -104,7 +104,7 @@ function App() {
 
             {/* <Route path="/child-a" element={<ChildA name={nestedprops} />} /> */}
             <Route path="/child-a" element={<ChildA />} />
-            {/* <Route path="/functiona-componentWillUnmount" element={<FunctionacomponentWillUnmount/>} /> */}
+            <Route path="/functiona-componentWillUnmount" element={<FunctionacomponentWillUnmount/>} />
             <Route path="/use-reducer" element={<Reducerexample />} />
 
             <Route

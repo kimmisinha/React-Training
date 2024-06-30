@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { purchase_book, buying_book, percentageBook, userdetails } from "./BookAction";
+import {
+  purchase_book,
+  buying_book,
+  percentageBook,
+  userdetails,
+} from "./BookAction";
 
 function BookContainer() {
   const Numberofbook = useSelector((state) => state.Numberofbook);
   const Totalnobook = useSelector((state) => state.Totalnobook);
   const profitPercentage = useSelector((state) => state.profitPercentage);
+
 
   const [form, setForm] = useState({
     name: "",
@@ -36,6 +42,7 @@ function BookContainer() {
     }
   };
 
+  {console.log(form)}
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(userdetails(form));

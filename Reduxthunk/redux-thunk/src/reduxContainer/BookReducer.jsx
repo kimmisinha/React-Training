@@ -16,6 +16,7 @@ const abc = {
   },
 };
 const BookReducer = (state = abc, action) => {
+  console.log('BookReducer',BookReducer);
   switch (action.type) {
     case sell_book:
       console.log('Inside reducer');

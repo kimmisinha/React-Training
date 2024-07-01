@@ -1,33 +1,33 @@
-import React, { useState, useEffect } from "react";
-function FunctionalMounting({ name }) {
-  const [data, setdata] = useState(null);
+import React, { useEffect, useState } from "react";
 
-  const [content, setContent] = useState(<p>Loading.....</p>);
+function FunctionalLifeCycle() {
+  let [click, setclick] = useState(0);
+  function clickMe() {
+    setclick(click + 1);
+  }
+
+  // mounted phase
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        "https://dummyjson.com/users?limit=5&skip=10&select=firstName,age"
-      );
-      const result = await response.json();
-      setdata(result);
-      console.log("hello");
-    };
-
-    fetchData();
-    console.log("hello2");
+    console.log("Component got mounted");
   }, []);
+  // updating phase
 
   useEffect(() => {
-    if (data) {
-      setContent(<pre>{JSON.stringify(data, 1)}</pre>);
-    }
-  }, [data]);
+    console.log("Component got updated");
+  }, [click]);
+
+  //component will umounting
+  useEffect(() => {
+    return () => {
+      console.log("Component got umounting");
+    };
+  });
   return (
-    <div>
-      {console.log("kimmi")}
-      {content}
-      <div>{name}</div>
-    </div>
+    <>
+      <h3>{click}</h3>
+      <button onClick={clickMe}> FunctionalLifeCycle</button>
+    </>
   );
 }
-export default FunctionalMounting;
+
+export default FunctionalLifeCycle;

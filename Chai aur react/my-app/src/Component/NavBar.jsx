@@ -77,9 +77,16 @@ const NavBar = () => {
           <Link to="/lazy-loading">lazy-loading-component</Link>
         </li>
         <li>
-          <Link to="/functiona-componentWillUnmount">functiona-componentWillUnmount-component</Link>
+          <Link to="/functiona-componentWillUnmount">
+            functiona-componentWillUnmount-component
+          </Link>
         </li>
-        {/* functiona-componentWillUnmount */}
+        <li>
+          <Link to="/react-query">React-Query</Link>
+        </li>
+        <li>
+          <Link to="/ReactMutation">ReactMutation</Link>
+        </li>
       </ul>
     </nav>
   );

@@ -31,11 +31,15 @@ import Elementcomponent from "./Component/Elementcomponent";
 import { createContext } from "react";
 import Reducerexample from "./Component/Reducerexample";
 import ErrorBoundary from "./Component/ErrorBoundary";
-import FunctionacomponentWillUnmount from "./Component/FunctionacomponentWillUnmount"
+import FunctionacomponentWillUnmount from "./Component/FunctionacomponentWillUnmount";
+import Reactquery from "./Component/Reactquery";
+import ReactMutation from "./Component/ReactMutation"
+import { QueryClient, QueryClientProvider } from "react-query";
+
 const LazyLoading = lazy(() => import("./Component/LazyLoading"));
 
 const DataContext = createContext(); /*create context*/
-
+const queryClient = new QueryClient();
 function App() {
   const [counter1, setCounter1] = useState(0);
   const [counter2, setCounter2] = useState(0);
@@ -49,83 +53,90 @@ function App() {
 
   return (
     <DataContext.Provider value={contextValue}>
-      <div className="App">
-        <Router>
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<ClassComponent />} />
+      <QueryClientProvider client={queryClient}>
+        <div className="App">
+          <Router>
+            <NavBar />
+            <Routes>
+              <Route path="/" element={<ClassComponent />} />
 
-            <Route path="/FunctionComponent" element={<FunctionComponent />}>
-              <Route path="JsxComponent" element={<JsxComponent />} />
-              <Route path="StateComponent" element={<StateComponent />} />
-              <Route path="Events" element={<Events />} />
-            </Route>
+              <Route path="/FunctionComponent" element={<FunctionComponent />}>
+                <Route path="JsxComponent" element={<JsxComponent />} />
+                <Route path="StateComponent" element={<StateComponent />} />
+                <Route path="Events" element={<Events />} />
+              </Route>
 
-            <Route
-              path="/PropComponent"
-              element={<PropComponent name={userName} age={userAge} />}
-            />
-            <Route path="/Batching" element={<Batching />} />
-            <Route path="/Keys" element={<Keys />} />
-            <Route path="/Lists" element={<Lists />} />
-            <Route path="/Conditional" element={<Conditional />} />
-            <Route
-              path="/ControlledComponent"
-              element={<ControlledComponent />}
-            />
-            <Route
-              path="/UnControlledComponent"
-              element={<UnControlledComponent />}
-            />
-            <Route path="/pure-comp" element={<PureComp />} />
-            <Route path="/formik-validate" element={<Formikvalidate />} />
-            <Route path="/counter" element={<Counter />} />
+              <Route
+                path="/PropComponent"
+                element={<PropComponent name={userName} age={userAge} />}
+              />
+              <Route path="/Batching" element={<Batching />} />
+              <Route path="/Keys" element={<Keys />} />
+              <Route path="/Lists" element={<Lists />} />
+              <Route path="/Conditional" element={<Conditional />} />
+              <Route
+                path="/ControlledComponent"
+                element={<ControlledComponent />}
+              />
+              <Route
+                path="/UnControlledComponent"
+                element={<UnControlledComponent />}
+              />
+              <Route path="/pure-comp" element={<PureComp />} />
+              <Route path="/formik-validate" element={<Formikvalidate />} />
+              <Route path="/counter" element={<Counter />} />
 
-            <Route path="*" element={<NotFound />} />
-            <Route path="/games-component" element={<GamesComponent />} />
-            {/* Axios */}
-            <Route path="/axios" element={<Axios />} />
-            <Route path="/axios-post" element={<AxiosPost />} />
+              <Route path="*" element={<NotFound />} />
+              <Route path="/games-component" element={<GamesComponent />} />
+              {/* Axios */}
+              <Route path="/axios" element={<Axios />} />
+              <Route path="/axios-post" element={<AxiosPost />} />
 
-            <Route
-              path="/proptypes"
-              element={
-                <Proptypes name={userName} age={userAge} email={userEmail} />
-              }
-            />
-            <Route
-              path="/element-component"
-              element={
-                <Elementcomponent
-                  elementProp={<p>This is a paragraph passed as a prop!</p>}
-                />
-              }
-            />
+              <Route
+                path="/proptypes"
+                element={
+                  <Proptypes name={userName} age={userAge} email={userEmail} />
+                }
+              />
+              <Route
+                path="/element-component"
+                element={
+                  <Elementcomponent
+                    elementProp={<p>This is a paragraph passed as a prop!</p>}
+                  />
+                }
+              />
 
-            {/* <Route path="/child-a" element={<ChildA name={nestedprops} />} /> */}
-            <Route path="/child-a" element={<ChildA />} />
-            <Route path="/functiona-componentWillUnmount" element={<FunctionacomponentWillUnmount/>} />
-            <Route path="/use-reducer" element={<Reducerexample />} />
+              {/* <Route path="/child-a" element={<ChildA name={nestedprops} />} /> */}
+              <Route path="/child-a" element={<ChildA />} />
+              <Route
+                path="/functiona-componentWillUnmount"
+                element={<FunctionacomponentWillUnmount />}
+              />
+              <Route path="/use-reducer" element={<Reducerexample />} />
 
-            <Route
-              path="/lazy-loading"
-              element={
-                <ErrorBoundary>
-                  <Suspense fallback={<div>Loading...</div>}>
-                    {<LazyLoading />}
-                  </Suspense>
-                </ErrorBoundary>
-              }
-            />
-          </Routes>
-        </Router>
+              <Route
+                path="/lazy-loading"
+                element={
+                  <ErrorBoundary>
+                    <Suspense fallback={<div>Loading...</div>}>
+                      {<LazyLoading />}
+                    </Suspense>
+                  </ErrorBoundary>
+                }
+              />
+              <Route path="/react-query" element={<Reactquery />} />
+              <Route path="/ReactMutation" element={<ReactMutation />} />
+            </Routes>
+          </Router>
 
-        {/* Example of usage outside the Router */}
-        {/* <Counter1 name={counter1} />
+          {/* Example of usage outside the Router */}
+          {/* <Counter1 name={counter1} />
         <button onClick={() => setCounter1(counter1 + 5)}>Update1</button>
         <Counter2 name={counter2} />
         <button onClick={() => setCounter2(counter2 + 10)}>Update2</button> */}
-      </div>
+        </div>
+      </QueryClientProvider>
     </DataContext.Provider>
   );
 }

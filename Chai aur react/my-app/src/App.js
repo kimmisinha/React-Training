@@ -1,5 +1,7 @@
 import "./App.css";
 import ReactDOM from "react-dom/client";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
 import React, { Suspense, lazy } from "react";
 import GamesComponent from "./Component/GamesComponent";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -33,7 +35,7 @@ import Reducerexample from "./Component/Reducerexample";
 import ErrorBoundary from "./Component/ErrorBoundary";
 import FunctionacomponentWillUnmount from "./Component/FunctionacomponentWillUnmount";
 import Reactquery from "./Component/Reactquery";
-import ReactMutation from "./Component/ReactMutation"
+import ReactMutation from "./Component/ReactMutation";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 const LazyLoading = lazy(() => import("./Component/LazyLoading"));
@@ -50,7 +52,9 @@ function App() {
   const name = "kimmi";
   const rollno = "9";
   const contextValue = { name, rollno };
+  const [showDevtools, setShowDevtools] = React.useState(false);
 
+  
   return (
     <DataContext.Provider value={contextValue}>
       <QueryClientProvider client={queryClient}>
@@ -136,6 +140,7 @@ function App() {
         <Counter2 name={counter2} />
         <button onClick={() => setCounter2(counter2 + 10)}>Update2</button> */}
         </div>
+        {/* <ReactQueryDevtools initialIsOpen={true}  /> */}
       </QueryClientProvider>
     </DataContext.Provider>
   );

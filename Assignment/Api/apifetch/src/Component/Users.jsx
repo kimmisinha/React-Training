@@ -1,11 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "../Component/Users.css";
 import axios from "axios";
 import axiosInstance from "../Component/Axiosinstance";
 
 function Users() {
   let [users, setUsers] = useState([]);
+  const Navigate = useNavigate();
+  const Location = useLocation();
   /*
   useEffect(() => {
     axios
@@ -24,6 +27,10 @@ function Users() {
   //   console.log("users:", users);
   //   console.log("setUsers:", setUsers);
 
+  function handlesubmit() {
+    Navigate("/addusers");
+  }
+  console.log("Current location:", Location);
   useEffect(() => {
     axiosInstance
       .get("/users")
@@ -36,6 +43,7 @@ function Users() {
 
   return (
     <div className="user-container">
+      {Location.pathname === "/" && <h1>welcome to userpage</h1>}
       {users.map((user) => (
         <div key={user.id} className="user-box">
           <h2>{user.name}</h2>
@@ -44,6 +52,10 @@ function Users() {
           </button>
         </div>
       ))}
+      <Link to="/adduser">Add User</Link>
+      <button onClick={handlesubmit} className="add-user-btn">
+        Navigate button
+      </button>
     </div>
   );
 }

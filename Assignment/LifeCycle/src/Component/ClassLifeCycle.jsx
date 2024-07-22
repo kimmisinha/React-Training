@@ -1,34 +1,53 @@
 import React from "react";
 
-class ClassLifeCycle extends React.Component {
+class ClassLifeCyclic extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       name: "kimmi",
     };
-    console.log("Inside child Constructor");
-  }
-  static getDerivedStateFromProps(props, state) {
-    console.log("Inside child getDerivedStateFromProps");
-    return null;
-  }
-  componentDidMount(){
-    console.log("Inside child componentDidMount")
+    console.log("constructor");
   }
 
+  static getDerivedStateFromProps(props, state) {
+    console.log("getDerivedStateFromProps - props:", props);
+    console.log("getDerivedStateFromProps - state:", state);
+    return null; // Return null to indicate no state change
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("shouldComponentUpdate - nextProps:", nextProps);
+    console.log("shouldComponentUpdate - nextState:", nextState);
+    return true;
+  }
+
+  componentDidMount() {
+    console.log("componentDidMount");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("componentDidUpdate - prevProps:", prevProps);
+    console.log("componentDidUpdate - prevState:", prevState);
+  }
+
+  componentWillUnmount() {
+    console.log("componentWillUnmount");
+  }
+
+  update = () => {
+    console.log("update method called");
+    this.setState({ name: "kumari" });
+  };
+
   render() {
+    console.log("render");
     return (
       <div>
-        <h2>ClassLifeCycle</h2>
-        <button
-          onClick={() => this.setState({ email: "kumarisinha@gamil.com" })}
-        >
-          {" "}
-          button
-        </button>
+        <h2>{this.state.name}</h2>
+        <button onClick={this.update}>button</button>
       </div>
     );
   }
 }
 
-export default ClassLifeCycle;
+export default ClassLifeCyclic;
